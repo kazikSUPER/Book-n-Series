@@ -28,4 +28,5 @@ using (var scope = app.Services.CreateScope())
 
 app.UseHttpsRedirection();
 app.MapControllers();
+app.MapGet("/health", () => Results.Ok(new { status = "OK" }));
 app.Run();
